@@ -177,14 +177,38 @@ section {
     gap: 20px;
     padding: 40px 20px;
     background: #fff;
+    position: relative;
+    justify-content: center;
+    padding: 40px 20px;    
 }
 
+
+.hero1 .hero-content1 {
+    position: absolute;
+    text-align: center;
+    background:transparent;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero1 .hero-content1 h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #ccc;
+}
+
+.hero1 .hero-content1 p {
+    font-size: 16px;
+    margin: 10px 0 0;
+    color: #ccc;
+}
 .hero-content1 {
     flex: 1;
 }
 
 .hero-image1 img {
-    max-width: 100%;
+    max-width: 1200px;
+    margin-left: 20;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -361,70 +385,219 @@ section {
 
 /*Request Form page*/
 
+/* Global Styles */
 
-.fern-container {
-    background-color: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    width: 450px;
-}
 
-.fern-container h1 {
-    font-size: 26px;
-    margin-bottom: 15px;
-}
-
-.fern-container p {
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 15px;
+/* Global Styles 
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #111827;
     line-height: 1.6;
 }
 
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}*/ 
+/* Header styling */
+.fern-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fern-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.fern-nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.fern-menu {
+    list-style: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+.fern-menu li {
+    margin-left: 20px;
+}
+
+.fern-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.fern-link:hover {
+    color: #007BFF;
+}
+
+/* Main container adjustments for left-aligned form */
+.fern-main {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px 20px;
+}
+
+.fern-container {
+    max-width: 600px;
+    width: 100%;
+    margin-right: auto;
+}
+
+
+.fern-link {
+    text-decoration: none;
+    color: #374151;
+    font-size: 1rem;
+    font-weight: 500;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+
+}
+
+.fern-link:hover {
+    color: #007aff;
+}
+
+/* Container Styles */
+.fern-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.fern-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.fern-container p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #6b7280;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+}
+
 .fern-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fern-group.full-width {
+    grid-column: span 2;
 }
 
 .fern-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
 }
 
-.fern-input,
-.fern-textarea,
+.fern-input, 
+.fern-textarea, 
 .fern-date {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 15px;
-    color: #333;
-    box-sizing: border-box;
+}
+
+.fern-input:focus, 
+.fern-textarea:focus, 
+.fern-date:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
 }
 
 .fern-textarea {
-    height: 90px;
+    resize: vertical;
+    min-height: 100px;
 }
 
+/* Button Styles */
 .fern-button {
-    background-color: #0066cc;
-    color: #fff;
-    padding: 12px 18px;
+    grid-column: span 2;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #007aff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-    width: 100%;
-    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 .fern-button:hover {
-    background-color: #004a99;
+    background-color: #005bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fern-container {
+        padding: 15px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .fern-button {
+        grid-column: span 1;
+    }
+
+    .fern-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .fern-nav {
+        justify-content: center;
+    }
+
+    .fern-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .fern-link {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -614,7 +787,7 @@ body {
 }
 
 .hero5 {
-    background-image: url('https://i.sstatic.net/FUUb8.png');
+    background-image: url('http://localhost/public/resources/images/martin.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -653,4 +826,41 @@ body {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar ul {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .btn {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
